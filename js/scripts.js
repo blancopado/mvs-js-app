@@ -7,12 +7,14 @@
 var modelo = {
   marcadores: [],
 
+  agregarMarcador: function(nuevoMarcador) {
+    this.marcadores.push(nuevoMarcador);
+  },
+
   obtenerTodosMarcadores: function() {
     return this.marcadores;
   }
 };
-
-
 
 /*****
 
@@ -22,7 +24,7 @@ var modelo = {
 
 var controlador = {
   agregarMarcador: function(nuevoMarcador) {
-    modelo.marcadores.push(nuevoMarcador);
+    modelo.agregarMarcador(nuevoMarcador);
 
     vista.representar();
 
@@ -51,10 +53,10 @@ var vista = {
         descripcion: form.descripcion.value,
         url: form.url.value
       }
+      form.reset();
       controlador.agregarMarcador(nuevoMarcador);
     });
 
-    form.reset();
   },
 
   representar: function() {
