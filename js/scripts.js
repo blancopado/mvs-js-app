@@ -44,7 +44,6 @@ var controlador = {
 
   eliminarMarcador: function(id) {
     modelo.eliminarMarcador(id);
-
     vista.representar();
   },
 
